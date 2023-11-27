@@ -1,0 +1,35 @@
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-users
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak-users:
+            issuer-uri: http://localhost:8080/realms/parcial-ximena-largo
+        registration:
+          keycloak-users:
+            authorization-grant-type: client_credentials
+            client-id: api-users-client
+            client-secret: fzYZhpArZHIdWHSpylWdtoMuDYfbLteP
+            token-uri: http://localhost:8080/realms/parcial-ximena-largo/protocol/openid-connect/token
+
+dh:
+  keycloak:
+      serverUrl: http://localhost:8080/
+      realm: parcial-ximena-largo
+      clientId: api-users-client
+      clientSecret: fzYZhpArZHIdWHSpylWdtoMuDYfbLteP
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+

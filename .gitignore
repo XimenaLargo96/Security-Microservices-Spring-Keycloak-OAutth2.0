@@ -1,0 +1,6 @@
+# Project exclude paths
+.idea
+/ms-bills/target/
+/ms-discovery/target/
+/ms-gateway/target/
+/ms-users/target/
