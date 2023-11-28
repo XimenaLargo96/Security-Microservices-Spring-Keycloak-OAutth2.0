@@ -27,6 +27,7 @@ public class BillController {
         return ResponseEntity.ok().body(service.findBillsByUserId(customerBill));
     }
     @PostMapping
+    @PreAuthorize("hasAuthority('/PROVIDERS')")
     public ResponseEntity<Bill> saveBill(@RequestBody Bill bill){
         return ResponseEntity.ok(service.saveBill(bill));
     }

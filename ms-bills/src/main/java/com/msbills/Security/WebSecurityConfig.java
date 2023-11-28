@@ -14,7 +14,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@EnableWebSecurity
 public class WebSecurityConfig {
 
     @Bean
@@ -24,6 +23,9 @@ public class WebSecurityConfig {
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new JwtAuthConverter());
 
         http
+                .authorizeHttpRequests(authorize -> authorize
+                        .anyRequest().authenticated()
+                )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt
                                 .jwtAuthenticationConverter(jwtAuthenticationConverter))
