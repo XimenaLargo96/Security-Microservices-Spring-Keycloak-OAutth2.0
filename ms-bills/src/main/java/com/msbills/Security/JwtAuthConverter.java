@@ -36,6 +36,5 @@ public class JwtAuthConverter implements Converter<Jwt, Collection<GrantedAuthor
 
     private static Collection<GrantedAuthority>  extracGroups(List<String> realmGroupsAccess){
         return realmGroupsAccess.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-
     }
 }

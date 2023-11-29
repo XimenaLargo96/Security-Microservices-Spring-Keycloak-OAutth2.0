@@ -21,7 +21,6 @@ spring:
             client-secret: fzYZhpArZHIdWHSpylWdtoMuDYfbLteP
             token-uri: http://localhost:8080/realms/parcial-ximena-largo/protocol/openid-connect/token
 
-
 dh:
   keycloak:
       serverUrl: http://localhost:8080/
