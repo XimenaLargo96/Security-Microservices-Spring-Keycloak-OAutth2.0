@@ -29,6 +29,14 @@ spring:
             - Path=/api/v1/**
           filters:
             - StripPrefix=2
+
+        - id: ms-users
+          uri: lb://ms-users/
+          predicates:
+            - Path=/api/v2/**
+          filters:
+            - StripPrefix=2
+
 # Configuraciones de eureka
 eureka:
   instance:

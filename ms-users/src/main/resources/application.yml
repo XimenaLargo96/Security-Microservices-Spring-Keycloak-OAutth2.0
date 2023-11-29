@@ -7,6 +7,9 @@ spring:
     name: ms-users
   security:
     oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/parcial-ximena-largo
       client:
         provider:
           keycloak-users:
@@ -17,6 +20,7 @@ spring:
             client-id: api-users-client
             client-secret: fzYZhpArZHIdWHSpylWdtoMuDYfbLteP
             token-uri: http://localhost:8080/realms/parcial-ximena-largo/protocol/openid-connect/token
+
 
 dh:
   keycloak:

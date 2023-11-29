@@ -19,7 +19,7 @@ public class JwtAuthConverter implements Converter<Jwt, Collection<GrantedAuthor
 
         List<String> realmGroups = source.getClaim("Group");
 
-        if (realmRolesAccess != null && !realmRolesAccess.isEmpty()) {
+        if (realmRolesAccess != null && !realmRolesAccess.isEmpty() && realmGroups != null) {
             authorities.addAll(extractRoles(realmRolesAccess));
             authorities.addAll(extracGroups(realmGroups));
         }
