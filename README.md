@@ -24,9 +24,17 @@ https://github.com/XimenaLargo96/Security-Microservices-Spring-Keycloak-OAutth2.
 ```
 docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:21.0.1 start-dev
 ```
-3.import the realm file into the project "realm-export.json"
 
-4.Create a new user and add him/her to the PROVIDERS group to create a new bill.
+3. import the realm file into the project "realm-export.json" into Keycloak
+
+```
+http://localhost:8080/
+```
+4. Create a new user and add him/her to the PROVIDERS group to create a new bill.
+```
+username: admin
+password: admin
+```
 
 5. Make sure that your source code is compiled correctly.
 ```
