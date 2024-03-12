@@ -65,7 +65,7 @@ http://localhost:8083/bills
     "totalPrice": 2.5
 }
 ```
-8. To list the invoices the user has, access the following endpoint
+9. To list the invoices the user has, access the following endpoint
 ```
 http://localhost:8090/api/v2/users/find/userId
 ```
